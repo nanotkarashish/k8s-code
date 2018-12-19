@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: db
+  namespace: vote
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - image: postgres:9.4
+        name: db
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        env:
+          - name: POSTGRES_USER1
+            valueFrom:
+              secretKeyRef:
+                name: db
+                key: POSTGRES_USER
+          - name: POSTGRES_PASSWD1
+            valueFrom:
+              secretKeyRef:
+                name: db
+                key: POSTGRES_PASSWD
+
+#        volumeMounts:
+#        - mountPath: /var/lib/postgresql/data
+#          name: db-data
+#      volumes:
+#      - name: db-data
+#        emptyDir: {}
