@@ -17,8 +17,7 @@ metadata:
 spec:
   podSelector:
     matchExpressions:
-      - {key: role, operator: In, values: [vote]}
-#      - {key: app, operator: In, values: [result]}
+      - {key: role, operator: In, values: [vote, result]}
   policyTypes:
   - Ingress
   ingress:
