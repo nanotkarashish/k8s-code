@@ -32,3 +32,10 @@ spec:
         envFrom:
           - configMapRef:
               name: vote
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "250Mi"
+          requests:
+            cpu: "100m"
+            memory: "50Mi"
