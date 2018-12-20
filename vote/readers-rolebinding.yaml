@@ -2,4 +2,14 @@
 apiVersion: rbac.authorization.k8s.io
 kind: RoleBinding
 metadata:
+  name: readers
+  namespace: vote
+subjects:
+- kind: Group
+  name: readers
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: readers
+  apiGroup: rbac.authorization.k8s.io
 
