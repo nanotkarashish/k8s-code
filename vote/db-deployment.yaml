@@ -27,10 +27,11 @@ spec:
               secretKeyRef:
                 name: db
                 key: POSTGRES_PASSWD
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: db-data
 
-#        volumeMounts:
-#        - mountPath: /var/lib/postgresql/data
-#          name: db-data
-#      volumes:
-#      - name: db-data
-#        emptyDir: {}
+      volumes:
+      - name: db-data
+        persistentVolumeClaim:
+          claimName: db-pvc
