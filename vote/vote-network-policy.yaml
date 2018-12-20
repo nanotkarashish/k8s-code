@@ -16,8 +16,6 @@ metadata:
   name: public
 spec:
   podSelector:
-    matchLabels:
-       var: value 
     matchExpressions:
       - {key: role, operator: In, values: [vote]}
       - {key: app, operator: In, values: [results]}
