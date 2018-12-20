@@ -4,3 +4,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: vote
 spec:
+  minReplicas: 2
+  maxReplicas: 15
+  targetCPUUtilizationPercentage: 30
+  scale:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: vote
