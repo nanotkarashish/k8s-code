@@ -1,0 +1,6 @@
+apiVersion: extensions/v1beta
+kind: Ingress
+metadata:
+  name: vote
+  annotations:
+    
