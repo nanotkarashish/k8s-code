@@ -20,3 +20,5 @@ spec:
           requests:
             cpu: "80m"
             memory: "50Mi"
+    nodeSelector:
+      zone: "appone"
