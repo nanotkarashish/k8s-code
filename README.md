@@ -1,5 +1,8 @@
-kubectl config set-credentials yono --client-certificate=/home/ubun tu/k8s-code/users/yono.crt --client-key=/home/ubuntu/k8s-code/users/yono.key
+GUIDE REFERENCE:
+https://schoolofdevops.github.io/ultimate-kubernetes-bootcamp/
 
-kubectl config set-context yono-prod --cluster=prod  --user=yono --namespace=instavote
+CONTACT:
+nanotkarashish@gmail.com
+info@ashishnanotkar.com
 
-kubectl config use-context yono-prod
+https://ashishnanotkar.com
