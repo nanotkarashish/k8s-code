@@ -15,8 +15,8 @@ spec:
         name: vote
         resources:
           limits:
-            cpu: "100m"
+            cpu: "300m"
             memory: "250Mi"
           requests:
-            cpu: "80m"
+            cpu: "200m"
             memory: "50Mi"
