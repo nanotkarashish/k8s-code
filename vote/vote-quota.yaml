@@ -8,6 +8,6 @@ spec:
   hard:
     requests.cpu: "0.5"
     requests.memory: "500Mi"
-    limits.cpu: "1"
+    limits.cpu: "2"
     limits.memory: "2Gi"
     count/deployments.apps: 8
