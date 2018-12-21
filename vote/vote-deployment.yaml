@@ -2,40 +2,21 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: vote
+  namespace: vote
 spec:
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-  revisionHistoryLimit: 5
   replicas: 10
-  minReadySeconds: 10
-  selector:
-    matchLabels:
-      role: vote
-    matchExpressions:
-      - {key: version, operator: In, values: [v1, v2, v3, v4, v5]}
   template:
     metadata:
       labels:
-        app: python
-        role: vote
-        version: v1
+        app: vote
     spec:
       containers:
-      - image: schoolofdevops/vote:v1
-        name: app
-        ports:
-          - containerPort: 80
-            protocol: TCP
-        envFrom:
-          - configMapRef:
-              name: vote
+      - image: dockersamples/examplevotingapp_vote:before
+        name: vote
         resources:
           limits:
-            cpu: "200m"
+            cpu: "20m"
             memory: "250Mi"
           requests:
-            cpu: "100m"
+            cpu: "10m"
             memory: "50Mi"

@@ -9,7 +9,7 @@ spec:
     metadata:
       labels:
         app: db
-        role: vote
+        role: db
     spec:
       containers:
       - image: postgres:9.4
